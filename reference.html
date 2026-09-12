@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Xiazhouqi Clear Reference</title>
+<style>
+:root{
+  --ground-a:#fbfbfd;--ground-b:#f3f4f7;--surface:#fff;
+  --line:rgba(60,60,67,.08);--line-strong:rgba(60,60,67,.13);
+  --text:#1d1d1f;--body:#4b4b50;--soft:#6e6e73;--faint:#8e8e93;
+  --blue:#537ca7;--blue-wash:rgba(83,124,167,.07);--blue-edge:rgba(83,124,167,.16);
+  --gold:#b5905a;--gold-wash:rgba(181,144,90,.07);--gold-edge:rgba(181,144,90,.17);
+  --green:#668b7b;--green-wash:rgba(102,139,123,.07);--green-edge:rgba(102,139,123,.16);
+  --r-header:24px;--r-section:23px;--r-card:18px;--r-core:20px;
+  --shadow-core:0 1px 2px rgba(15,23,42,.035),0 14px 34px rgba(15,23,42,.075);
+  --shadow-normal:0 4px 14px rgba(15,23,42,.035);
+}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;min-height:100vh;padding:14px 10px 40px;color:var(--text);background:linear-gradient(180deg,var(--ground-a),var(--ground-b));font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+.page{width:min(100%,1080px);margin:auto}
+.header,.section{background:rgba(255,255,255,.93);border:1px solid var(--line)}
+.header{padding:20px 16px;border-radius:var(--r-header);box-shadow:0 1px 2px rgba(15,23,42,.03),0 14px 36px rgba(15,23,42,.06)}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--soft);font-size:11px;background:rgba(255,255,255,.72)}
+h1{margin:12px 0 0;font-size:clamp(30px,8vw,40px);line-height:1.06;letter-spacing:-.035em;font-weight:780}
+.nav{display:flex;gap:8px;margin:12px 0 24px;padding:0 2px;overflow:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}.nav a{flex:0 0 auto;text-decoration:none;color:var(--soft);font-size:12px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.7)}
+.section{position:relative;margin-top:18px;padding:16px 13px;border-radius:var(--r-section);box-shadow:0 1px 2px rgba(15,23,42,.03),0 10px 30px rgba(15,23,42,.045);overflow:hidden}
+.section::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--accent,var(--blue))}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.section-title{font-size:17px;font-weight:740}.dot{width:7px;height:7px;border-radius:50%;background:var(--accent,var(--blue));box-shadow:0 0 0 5px var(--wash,var(--blue-wash))}
+.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.card{min-width:0;padding:14px 13px;border:1px solid var(--line);border-radius:var(--r-card);background:linear-gradient(180deg,#fff,#fcfcfd);box-shadow:var(--shadow-normal)}.card.core{border-radius:var(--r-core);border-color:var(--edge,var(--line-strong));box-shadow:var(--shadow-core)}.card.quiet{box-shadow:none;color:var(--soft)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.name{min-width:0;font-size:15px;font-weight:720;overflow-wrap:anywhere}.pill{flex:0 0 auto;padding:4px 8px;border:1px solid var(--edge,var(--line));border-radius:999px;color:var(--accent,var(--soft));background:var(--wash,rgba(60,60,67,.04));font-size:10px;font-weight:650}.meta{margin-top:9px;color:var(--soft);font-size:12px;line-height:1.65}.row{display:grid;grid-template-columns:minmax(0,1fr) 28px;gap:8px;align-items:center;margin-top:10px}.value{min-width:0;overflow-wrap:anywhere;color:var(--body);font-size:13px}.copy{display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--line-strong);border-radius:999px;background:#f6f6f8;color:var(--soft);opacity:.65;cursor:pointer;touch-action:manipulation}.copy:active{transform:scale(.96);opacity:.92}.note{margin:22px 2px 0;color:var(--faint);font-size:11px;text-align:center}
+.platform{--accent:var(--blue);--wash:var(--blue-wash);--edge:var(--blue-edge)}.finance{--accent:var(--gold);--wash:var(--gold-wash);--edge:var(--gold-edge)}.allocation{--accent:var(--green);--wash:var(--green-wash);--edge:var(--green-edge)}
+@media(min-width:720px){body{padding:14px 22px 56px}:root{--r-header:28px;--r-section:26px;--r-card:20px;--r-core:23px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.header{padding:25px 24px}}
+@supports(-webkit-touch-callout:none){button,input,select,textarea{font-size:16px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="header">
+    <span class="eyebrow">Xiazhouqi Clear · v1.2.0</span>
+    <h1>信息很多，也可以很安静</h1>
+  </header>
+
+  <nav class="nav" aria-label="示例导航">
+    <a href="#platform">平台</a><a href="#finance">资金</a><a href="#allocation">分配</a>
+  </nav>
+
+  <section class="section platform" id="platform">
+    <div class="section-head"><div class="section-title">平台信息</div><span class="dot" aria-hidden="true"></span></div>
+    <div class="grid">
+      <article class="card core"><div class="card-top"><div class="name">primary@example.com</div><span class="pill">主账号</span></div><div class="meta">核心内容用字重和阴影突出，平台色只负责分类</div><div class="row"><div class="value">example.com/account/primary</div><button class="copy" type="button" aria-label="复制示例内容" data-copy="example.com/account/primary">⧉</button></div></article>
+      <article class="card"><div class="card-top"><div class="name">daily@example.com</div><span class="pill">常用</span></div><div class="meta">Normal 层级保持清楚，但不与核心内容抢权重</div></article>
+      <article class="card quiet"><div class="card-top"><div class="name">archive@example.com</div><span class="pill">历史</span></div><div class="meta">Quiet 内容退后，而不是缩小到难以阅读</div></article>
+    </div>
+  </section>
+
+  <section class="section finance" id="finance">
+    <div class="section-head"><div class="section-title">核心资金</div><span class="dot" aria-hidden="true"></span></div>
+    <div class="grid"><article class="card core"><div class="card-top"><div class="name">长期账户</div><span class="pill">Core</span></div><div class="meta">用途色与视觉层级分工明确，不按品牌随机配色</div></article><article class="card"><div class="card-top"><div class="name">日常账户</div><span class="pill">Normal</span></div><div class="meta">卡片主体继续保持白色</div></article><article class="card quiet"><div class="card-top"><div class="name">备用账户</div><span class="pill">Quiet</span></div><div class="meta">低频内容使用更轻的阴影和对比</div></article></div>
+  </section>
+
+  <section class="section allocation" id="allocation">
+    <div class="section-head"><div class="section-title">用途分配</div><span class="dot" aria-hidden="true"></span></div>
+    <div class="grid"><article class="card"><div class="card-top"><div class="name">固定支出</div><span class="pill">分类</span></div><div class="meta">颜色帮助快速定位，不替代文字信息</div></article><article class="card"><div class="card-top"><div class="name">长期预留</div><span class="pill">分类</span></div><div class="meta">同类信息保持同一套色彩逻辑</div></article><article class="card quiet"><div class="card-top"><div class="name">低频项目</div><span class="pill">次要</span></div><div class="meta">页面整体保持低噪音</div></article></div>
+  </section>
+
+  <p class="note">Xiazhouqi Clear · Structure first, color with meaning</p>
+</main>
+<script>
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-copy]');if(!b)return;try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='✓';setTimeout(()=>b.textContent='⧉',900)}catch(_){}});
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+:root {
+  /* Xiazhouqi Clear v1.2.0 — neutral shell, semantic accents */
+  --clear-ground-a: #fbfbfd;
+  --clear-ground-b: #f3f4f7;
+  --clear-surface: #ffffff;
+  --clear-section-bg: rgba(255,255,255,.93);
+  --clear-section-bg-strong: rgba(255,255,255,.98);
+
+  --clear-line: rgba(60,60,67,.08);
+  --clear-line-strong: rgba(60,60,67,.13);
+
+  --clear-text-main: #1d1d1f;
+  --clear-text-body: #4b4b50;
+  --clear-text-secondary: #6e6e73;
+  --clear-text-faint: #8e8e93;
+
+  --clear-r-header: 24px;
+  --clear-r-section: 23px;
+  --clear-r-core: 20px;
+  --clear-r-normal: 18px;
+  --clear-r-pill: 999px;
+
+  --clear-shadow-core: 0 1px 2px rgba(15,23,42,.035), 0 14px 34px rgba(15,23,42,.075);
+  --clear-shadow-section: 0 1px 2px rgba(15,23,42,.03), 0 10px 30px rgba(15,23,42,.045);
+  --clear-shadow-normal: 0 4px 14px rgba(15,23,42,.035);
+  --clear-shadow-quiet: none;
+
+  /* Platform accents */
+  --clear-outlook: #2f7de1;
+  --clear-gmail: #e0554a;
+  --clear-qq: #2fa86a;
+  --clear-apple: #8a8f98;
+  --clear-aliyun: #2f8fe1;
+  --clear-sina: #e08a2f;
+
+  /* Functional accents */
+  --clear-deposit: #b5905a;
+  --clear-flow: #537ca7;
+  --clear-housing: #a98263;
+  --clear-virtual: #77738f;
+  --clear-allocation: #668b7b;
+  --clear-quiet: #8b8f97;
+
+  /* Task / plan accents from the canonical neutral-shell pattern */
+  --clear-learning: #597fb4;
+  --clear-organize: #5f8b84;
+  --clear-create: #77738f;
+  --clear-accumulate: #a9854f;
+
+  --clear-duration-fast: 120ms;
+  --clear-duration-normal: 180ms;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--clear-text-main);
+  background: linear-gradient(180deg,var(--clear-ground-a),var(--clear-ground-b));
+  font-family: -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",system-ui,"PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.clear-page {
+  width: min(100% - 20px,1080px);
+  margin: 0 auto;
+}
+
+.clear-section {
+  border: 1px solid var(--clear-line);
+  border-radius: var(--clear-r-section);
+  background: var(--clear-section-bg);
+  box-shadow: var(--clear-shadow-section);
+}
+
+.clear-card {
+  min-width: 0;
+  border: 1px solid var(--clear-line);
+  border-radius: var(--clear-r-normal);
+  background: linear-gradient(180deg,#fff,#fcfcfd);
+}
+
+.clear-card.is-core {
+  border-radius: var(--clear-r-core);
+  border-color: var(--clear-line-strong);
+  box-shadow: var(--clear-shadow-core);
+}
+
+.clear-card.is-normal {
+  box-shadow: var(--clear-shadow-normal);
+}
+
+.clear-card.is-quiet {
+  color: var(--clear-text-secondary);
+  box-shadow: var(--clear-shadow-quiet);
+}
+
+.clear-breakable {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.clear-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 1px solid var(--clear-line);
+  border-radius: var(--clear-r-pill);
+  color: var(--clear-text-secondary);
+  background: rgba(255,255,255,.7);
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.clear-copy-btn {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border: 1px solid var(--clear-line-strong);
+  border-radius: var(--clear-r-pill);
+  color: var(--clear-text-secondary);
+  background: #f6f6f8;
+  opacity: .62;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  transition: transform var(--clear-duration-fast) ease, opacity var(--clear-duration-fast) ease;
+}
+
+.clear-copy-btn:active {
+  transform: scale(.96);
+  opacity: .9;
+}
+
+@supports (-webkit-touch-callout:none) {
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
+}
+
+@media (min-width:720px) {
+  :root {
+    --clear-r-header: 28px;
+    --clear-r-section: 26px;
+    --clear-r-core: 23px;
+    --clear-r-normal: 20px;
+  }
+
+  .clear-page {
+    width: min(100% - 44px,1080px);
+  }
+}

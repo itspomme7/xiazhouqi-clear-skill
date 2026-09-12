@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clear Information Cards</title>
+<style>
+:root{--bg1:#fbfbfd;--bg2:#f3f4f7;--text:#1d1d1f;--soft:#6e6e73;--line:rgba(60,60,67,.09);--line2:rgba(60,60,67,.14);--shadow-core:0 1px 2px rgba(15,23,42,.035),0 14px 34px rgba(15,23,42,.075);--shadow-normal:0 4px 14px rgba(15,23,42,.035);--blue:#537ca7;--blue-wash:rgba(83,124,167,.07);--gold:#b5905a;--gold-wash:rgba(181,144,90,.07);--gray:#8b8f97;--gray-wash:rgba(139,143,151,.06)}*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;padding:16px 12px 42px;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:-apple-system,BlinkMacSystemFont,system-ui,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}.page{width:min(100%,980px);margin:auto}.head{padding:18px 16px 14px}.head h1{margin:0;font-size:30px;letter-spacing:-.035em}.head p{margin:8px 0 0;color:var(--soft);font-size:12px}.group{margin-top:16px;padding:15px 13px;border:1px solid var(--line);border-radius:23px;background:rgba(255,255,255,.93);box-shadow:0 1px 2px rgba(15,23,42,.03),0 10px 30px rgba(15,23,42,.045)}.group-title{display:flex;align-items:center;gap:8px;margin:0 0 12px;font-size:16px}.dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.card{min-width:0;padding:13px;border:1px solid var(--line);border-radius:18px;background:#fff}.core{border-color:var(--line2);box-shadow:var(--shadow-core)}.normal{box-shadow:var(--shadow-normal)}.quiet{box-shadow:none;color:var(--soft)}.top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start}.name{min-width:0;overflow-wrap:anywhere;font-size:14px;font-weight:720}.tag{padding:4px 8px;border-radius:999px;background:var(--wash);color:var(--accent);font-size:10px;font-weight:700}.meta{margin-top:8px;color:var(--soft);font-size:12px;line-height:1.65}.copy-row{display:grid;grid-template-columns:minmax(0,1fr) 26px;gap:8px;align-items:center;margin-top:10px}.value{min-width:0;overflow-wrap:anywhere;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.copy{display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--line2);border-radius:999px;background:#f6f6f8;color:var(--soft);opacity:.65;cursor:pointer;touch-action:manipulation}.copy:active{transform:scale(.96);opacity:.92}.platform{--accent:var(--blue);--wash:var(--blue-wash)}.asset{--accent:var(--gold);--wash:var(--gold-wash)}.backup{--accent:var(--gray);--wash:var(--gray-wash)}@media(min-width:720px){body{padding:24px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.group{border-radius:26px;padding:18px}.card{border-radius:20px}}@supports(-webkit-touch-callout:none){button{font-size:16px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="head"><h1>Clear 信息卡片</h1><p>同类信息同色，重要程度用字重与阴影区分</p></header>
+
+  <section class="group platform">
+    <h2 class="group-title"><span class="dot"></span>平台组</h2>
+    <div class="grid">
+      <article class="card core"><div class="top"><div class="name">primary@example.com</div><span class="tag">Core</span></div><div class="meta">主账号保持稳定视觉权重</div><div class="copy-row"><div class="value">primary@example.com</div><button class="copy" data-copy="primary@example.com" aria-label="复制示例邮箱">⧉</button></div></article>
+      <article class="card normal"><div class="top"><div class="name">daily@example.com</div><span class="tag">Normal</span></div><div class="meta">普通内容不与核心内容抢层级</div></article>
+      <article class="card quiet"><div class="top"><div class="name">archive.long.address@example-subdomain.com</div><span class="tag">Quiet</span></div><div class="meta">长字符串可以自然换行，历史内容退后但仍清楚</div></article>
+    </div>
+  </section>
+
+  <section class="group asset">
+    <h2 class="group-title"><span class="dot"></span>核心资产组</h2>
+    <div class="grid">
+      <article class="card core"><div class="top"><div class="name">长期账户 A</div><span class="tag">主用途</span></div><div class="meta">用途决定语义色，品牌不决定卡片颜色</div></article>
+      <article class="card core"><div class="top"><div class="name">长期账户 B</div><span class="tag">第二用途</span></div><div class="meta">同组保持同一套低饱和色彩信号</div></article>
+      <article class="card normal"><div class="top"><div class="name">日常账户</div><span class="tag">常用</span></div><div class="meta">普通资金流使用较轻层级</div></article>
+    </div>
+  </section>
+
+  <section class="group backup">
+    <h2 class="group-title"><span class="dot"></span>低频备用组</h2>
+    <div class="grid">
+      <article class="card quiet"><div class="top"><div class="name">备用账户 01</div><span class="tag">备用</span></div><div class="meta">弱化不等于看不清</div></article>
+      <article class="card quiet"><div class="top"><div class="name">历史账户 02</div><span class="tag">历史</span></div><div class="meta">Quiet 层级默认无重阴影</div></article>
+      <article class="card quiet"><div class="top"><div class="name">冷备份 03</div><span class="tag">低频</span></div><div class="meta">页面整体保持低噪音</div></article>
+    </div>
+  </section>
+</main>
+<script>
+document.addEventListener('click',async e=>{const b=e.target.closest('[data-copy]');if(!b)return;try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='✓';setTimeout(()=>b.textContent='⧉',800)}catch(_){}});
+</script>
+</body>
+</html>
