@@ -1,3 +1,9 @@
+# **禁止说明性文字出现在成品网页里**
+# **禁止说明性文字出现在成品网页里**
+# **禁止说明性文字出现在成品网页里**
+
+**（重要的话说三遍）**
+
 # Xiazhouqi Clear Skill
 
 > **Xiazhouqi Clear｜下周七·清透** — a calm, information-first web design skill for dense personal utility pages.
